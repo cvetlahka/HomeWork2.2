@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
+    @IBOutlet var mainDisplayThree: UIView!
+    @IBOutlet var mainDisplayTwo: UIView!
     @IBOutlet var mainDisplay: UIView!
     @IBOutlet var redValue: UILabel!
     @IBOutlet var greenValue: UILabel!
@@ -25,6 +27,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainDisplay.layer.cornerRadius = 10
+        mainDisplayTwo.layer.cornerRadius = 10
+        mainDisplayThree.layer.cornerRadius = 10
         
         sliderRed.value = 0.5
         sliderRed.minimumValue = 0
@@ -53,7 +59,7 @@ class ViewController: UIViewController {
     @IBAction func sliderGreenAction() {
         let currentGreenValue = CGFloat (sliderGreen.value)
         greenValue.text = String(format:"%.2f", sliderGreen.value)
-        mainDisplay.backgroundColor = .green; mainDisplay.backgroundColor = mainDisplay.backgroundColor?.withAlphaComponent(currentGreenValue)
+        mainDisplayTwo.backgroundColor = .green; mainDisplayTwo.backgroundColor = mainDisplayTwo.backgroundColor?.withAlphaComponent(currentGreenValue)
            
         
     }
@@ -61,7 +67,7 @@ class ViewController: UIViewController {
     @IBAction func sliderBlueAction() {
         let currentBlueValue = CGFloat (sliderBlue.value)
         blueValue.text = String(format:"%.2f", sliderBlue.value)
-        mainDisplay.backgroundColor = .blue; mainDisplay.backgroundColor = mainDisplay.backgroundColor?.withAlphaComponent(currentBlueValue)
+        mainDisplayThree.backgroundColor = .blue; mainDisplayThree.backgroundColor = mainDisplayThree.backgroundColor?.withAlphaComponent(currentBlueValue)
       
     }
    
