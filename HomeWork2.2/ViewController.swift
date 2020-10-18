@@ -20,11 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet var sliderGreen: UISlider!
     @IBOutlet var sliderBlue: UISlider!
     
-    
-    
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,16 +27,20 @@ class ViewController: UIViewController {
         mainDisplayTwo.layer.cornerRadius = 10
         mainDisplayThree.layer.cornerRadius = 10
         
-        sliderRed.value = 0.5
+        
         sliderRed.minimumValue = 0
         sliderRed.maximumValue = 1
+        sliderRed.value = 0.5
+        
         
         sliderBlue.minimumValue = 0
         sliderBlue.maximumValue = 1
+        sliderBlue.value = 0.5
+        
         
         sliderGreen.minimumValue = 0
         sliderGreen.maximumValue = 1
-        
+        sliderGreen.value = 0.5
         
         redValue.text = String(format:"%.2f", sliderRed.value)
         greenValue.text = String(format:"%.2f", sliderGreen.value)
@@ -52,25 +51,18 @@ class ViewController: UIViewController {
         let currentRedValue = CGFloat (sliderRed.value)
         redValue.text = String(format:"%.2f", sliderRed.value)
         mainDisplay.backgroundColor = .red; mainDisplay.backgroundColor = mainDisplay.backgroundColor?.withAlphaComponent(currentRedValue)
-           
-        
     }
     
     @IBAction func sliderGreenAction() {
         let currentGreenValue = CGFloat (sliderGreen.value)
         greenValue.text = String(format:"%.2f", sliderGreen.value)
         mainDisplayTwo.backgroundColor = .green; mainDisplayTwo.backgroundColor = mainDisplayTwo.backgroundColor?.withAlphaComponent(currentGreenValue)
-           
-        
     }
     
     @IBAction func sliderBlueAction() {
         let currentBlueValue = CGFloat (sliderBlue.value)
         blueValue.text = String(format:"%.2f", sliderBlue.value)
         mainDisplayThree.backgroundColor = .blue; mainDisplayThree.backgroundColor = mainDisplayThree.backgroundColor?.withAlphaComponent(currentBlueValue)
-      
     }
-   
-    
 }
 
